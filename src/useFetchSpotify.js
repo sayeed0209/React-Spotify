@@ -42,6 +42,7 @@ export const useFetchSpotify = () => {
 				options
 			);
 			const results = await response.json();
+			console.log(results);
 			setAlbums(results.artists.items);
 			setIsLoading(false);
 		} catch (error) {
@@ -51,7 +52,8 @@ export const useFetchSpotify = () => {
 	};
 	useEffect(() => {
 		fetchToken();
+		fetchAlbums();
 	}, []);
 
-	return { isLoading, albums, fetchAlbums };
+	return { isLoading, albums };
 };
