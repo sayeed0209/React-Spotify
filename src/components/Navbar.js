@@ -4,10 +4,7 @@ function Navbar() {
 	return (
 		<NavMain expand="lg" bg="dark" variant="dark">
 			<Container>
-				<Nav
-					activeKey="/"
-					onSelect={selectedKey => alert(`selected ${selectedKey}`)}
-				>
+				<Nav activeKey="/">
 					<Nav.Item>
 						<Nav.Link href="/">Home</Nav.Link>
 					</Nav.Item>
