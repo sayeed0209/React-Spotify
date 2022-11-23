@@ -3,6 +3,7 @@ import { Container, Row, Col, Card, Button } from 'react-bootstrap';
 import { useParams } from 'react-router-dom';
 import { useFetchSpotify } from '../useFetchSpotify';
 import { BsPersonFill, BsTrophyFill } from 'react-icons/bs';
+import { Link } from 'react-router-dom';
 // import SpotifyPlayer from 'react-spotify-web-playback';
 const SingleArtistDetails = ({ searchTerm }) => {
 	const { fetchAlbums, albums = [] } = useFetchSpotify();
@@ -44,12 +45,15 @@ const SingleArtistDetails = ({ searchTerm }) => {
 											{<BsTrophyFill className="text-warning" />}
 											{popularity}
 										</Card.Text>
-										<a href={spotify} className="btn btn-outline-secondary">
+										<a href={spotify} className="btn btn-outline-info">
 											Listen to {name} on Spotify
 										</a>
 										{/* <SpotifyPlayer token={accessToken} uris={[uri]} /> */}
 										{/* Spotify does not allow to play music on the web without being their premium user */}
 									</Card.Body>
+									<Link to="/" className="btn btn-outline-warning">
+										Back to Home
+									</Link>
 								</Col>
 							</Row>
 						</Card>
