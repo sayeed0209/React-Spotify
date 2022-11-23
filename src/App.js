@@ -2,7 +2,7 @@ import { useState } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Container } from 'react-bootstrap';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Homepage from './pages/Homepage';
+import ArtistList from './pages/ArtistList';
 import SingleArtistDetails from './pages/SingleArtistDetails';
 import Navbar from './components/Navbar';
 const App = () => {
@@ -16,7 +16,7 @@ const App = () => {
 						<Route
 							index
 							element={
-								<Homepage
+								<ArtistList
 									searchTerm={searchTerm}
 									setSearchTerm={setSearchTerm}
 								/>
