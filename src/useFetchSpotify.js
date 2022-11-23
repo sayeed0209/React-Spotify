@@ -27,7 +27,7 @@ export const useFetchSpotify = () => {
 			console.log(error);
 		}
 	};
-	const fetchAlbums = async () => {
+	const fetchAlbums = async (searchTerm = 'Taylor') => {
 		setIsLoading(true);
 		const options = {
 			method: 'GET',
@@ -38,22 +38,20 @@ export const useFetchSpotify = () => {
 		};
 		try {
 			const response = await fetch(
-				`${ALBUM_URL}?q=Taylor Swift&type=artist`,
+				`${ALBUM_URL}?q=${searchTerm}&type=artist`,
 				options
 			);
 			const results = await response.json();
-			console.log(results);
-			setAlbums(results.artists.items);
 			setIsLoading(false);
+			setAlbums(results.artists.items);
 		} catch (error) {
 			setIsLoading(false);
-			console.log(error);
+			console.log(error.message);
 		}
 	};
 	useEffect(() => {
 		fetchToken();
-		fetchAlbums();
 	}, []);
 
-	return { isLoading, albums };
+	return { isLoading, albums, fetchAlbums, accessToken };
 };

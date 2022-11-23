@@ -6,7 +6,7 @@ import Homepage from './pages/Homepage';
 import SingleArtistDetails from './pages/SingleArtistDetails';
 import Navbar from './components/Navbar';
 const App = () => {
-	const [searchTerm, setSearchTerm] = useState(() => 'Taylor Swift');
+	const [searchTerm, setSearchTerm] = useState('Taylor Swift');
 	return (
 		<Router>
 			<Navbar />
